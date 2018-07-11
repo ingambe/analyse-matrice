@@ -10,7 +10,7 @@
 void multiplicationMatrice(float A[], float B[], float C[]){
     for (int i=0; i< N; i++){
         for (int j=0; j< M; j++){
-            for (int k=0; k< P; k++){
+            for (int k=0; k< P; k+=7){
                 C[i,j] = C[i,j] + A[i,k] * B[k,j];
             }
         }
@@ -24,9 +24,9 @@ int main() {
     clock_gettime( CLOCK_REALTIME, &start);
     srand(time(NULL));
     // 4096 * 4096 = 16777216
-    float * A = (float *) malloc(16777216 * sizeof(float));
-    float * B= (float *) malloc(16777216 * sizeof(float));
-    float * C= (float *) malloc(16777216 * sizeof(float));
+    float A[16777216];
+    float B[16777216];
+    float C[16777216];
     for(int i = 0; i < 16777216; i++){
         A[i] = rand();
         B[i] = rand();
@@ -35,7 +35,6 @@ int main() {
     multiplicationMatrice(A, B, C);
     clock_gettime( CLOCK_REALTIME, &stop);
     accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec );
-	accum = accum / 1e6;
     printf( "%lf\n", accum );
     fprintf(stderr, "%f", C[5,5]);
     return 0;

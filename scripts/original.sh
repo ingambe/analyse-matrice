@@ -54,12 +54,12 @@ echo "fin de creation fichier de sortie \n"
 
 echo "debug generation resultat \n"
 
-for i in  `seq 1 100`
+for i in  `seq 1 20`
 do
   echo "i : $i \n"
   echo "GCC \n"
   #GCC
-  ./../bin/gcc_no_option.out >> ../output/gcc/no_option/resultat.txt 2>/dev/null 
+  ./../bin/gcc_no_option.out >> ../output/gcc/no_option/resultat.txt
   ./../bin/gcc_O1.out >> ../output/gcc/O1/resultat.txt 2>/dev/null 
   ./../bin/gcc_O2.out >> ../output/gcc/O2/resultat.txt 2>/dev/null 
   ./../bin/gcc_O3.out >> ../output/gcc/O3/resultat.txt 2>/dev/null 
