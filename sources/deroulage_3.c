@@ -8,19 +8,20 @@
 #define P 4
 
 void multiplicationMatrice(float A[], float B[], float C[]){
-    for (int i=0; i< (N / 2) * 2; i+=2){
+    for (int i=0; i< (N / 3) * 2; i+=3){
         for (int j=0; j< M; j++){
             for (int k=0; k< P; k++){
                 C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + k] * B[(k * P) + j];
             }
-        }
-        for (int j=0; j< M; j++){
             for (int k=0; k< P; k++){
                 C[((i + 1) * N) + j] = C[((i + 1) * N) + j] + A[((i + 1) * N) + k] * B[(k * P) + j];
             }
+            for (int k=0; k< P; k++){
+                C[((i + 2) * N) + j] = C[((i + 2) * N) + j] + A[((i + 2) * N) + k] * B[(k * P) + j];
+            }
         }
     }
-    for (int i=(N / 2) * 2; i< N; i++){
+    for (int i=(N / 3) * 3; i< N; i++){
         for (int j=0; j< M; j++){
             for (int k=0; k< P; k++){
                 C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + k] * B[(k * P) + j];
