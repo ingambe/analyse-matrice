@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <limits.h>
 
-#define N 4096
-#define M 4096
-#define P 4096
+#define N 4
+#define M 4
+#define P 4
 
 void multiplicationMatrice(float A[], float B[], float C[]){
     for (int i=0; i< N; i++){
@@ -33,18 +33,23 @@ int main() {
     clock_gettime( CLOCK_REALTIME, &start);
     srand(time(NULL));
     // 4096 * 4096 = 16777216
-    float A[16777216];
-    float B[16777216];
-    float C[16777216];
-    for(int i = 0; i < 16777216; i++){
-        A[i] = rand();
-        B[i] = rand();
+    float A[16];
+    float B[16];
+    float C[16];
+    for(int i = 0; i < 16; i++){
+        A[i] = i;
+        B[i] = i;
         C[i] = 0;
     }
     multiplicationMatrice(A, B, C);
     clock_gettime( CLOCK_REALTIME, &stop);
     accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec );
     printf( "%lf\n", accum );
-    fprintf(stderr, "%f", C[5,5]);
+    for(int i = 0; i < 4; i++){
+	for(int j = 0; j < 4 ; j++){
+		printf("%f ", C[(i * 4) + j]);
+	}
+	printf("\n");
+    }
     return 0;
 }

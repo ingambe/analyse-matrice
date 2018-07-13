@@ -11,7 +11,7 @@ void multiplicationMatrice(float A[], float B[], float C[]){
     for (int i=0; i< N; i++){
         for (int j=0; j< M; j++){
             for (int k=0; k< P; k++){
-                C[i,j] = C[i,j] + A[i,k] * B[k,j];
+                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + k] * B[(k * P) + j];
             }
         }
     }
