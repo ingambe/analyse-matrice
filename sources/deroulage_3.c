@@ -48,11 +48,6 @@ int main() {
     clock_gettime( CLOCK_REALTIME, &stop);
     accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec );
     printf( "%lf\n", accum );
-    for(int i = 0; i < 4; i++){
-	for(int j = 0; j < 4 ; j++){
-		printf("%f ", C[(i * 4) + j]);
-	}
-	printf("\n");
-    }
+    printf("%f\n", C[5,5]);
     return 0;
 }
