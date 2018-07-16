@@ -70,4 +70,28 @@ icpc ../sources/deroulage_3.c -Os -o ../bin/intel_deroulage3_Osize.out
 clang ../sources/deroulage_3.c -O2 -o ../bin/clang_deroulage3_O2.out
 clang ../sources/deroulage_3.c -O3 -o ../bin/clang_deroulage3_O3.out
 clang ../sources/deroulage_3.c -Os -o ../bin/clang_deroulage3_Osize.out
+
+# ORDRE
+echo "ordre"
+gcc ../sources/ordre.c -O3 -o ../bin/gcc_ordre_O3.out
+
+icpc ../sources/ordre.c -O3 -o ../bin/intel_ordre_O3.out
+
+clang ../sources/ordre.c -O3 -o ../bin/clang_ordre_O3.out
+
+# ORDRE 2
+echo "ordre 2"
+gcc ../sources/ordre_2.c -O3 -o ../bin/gcc_ordre2_O3.out
+
+icpc ../sources/ordre_2.c -O3 -o ../bin/intel_ordre2_O3.out
+
+clang ../sources/ordre_2.c -O3 -o ../bin/clang_ordre2_O3.out
+
+# ORDRE 3
+echo "ordre 3"
+gcc ../sources/ordre_3.c -O3 -o ../bin/gcc_ordre3_O3.out
+
+icpc ../sources/ordre_3.c -O3 -o ../bin/intel_ordre3_O3.out
+
+clang ../sources/ordre_3.c -O3 -o ../bin/clang_ordre3_O3.out
 echo "fin de compilation"
