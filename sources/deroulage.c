@@ -6,6 +6,7 @@
 #define N 4096
 #define M 4096
 #define P 4096
+#define BILLION 1E9
 
 void multiplicationMatrice(float A[], float B[], float C[]){
     for (int i=0; i< N; i++){
@@ -43,8 +44,8 @@ int main() {
     }
     multiplicationMatrice(A, B, C);
     clock_gettime( CLOCK_REALTIME, &stop);
-    accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec );
+    accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec ) / BILLION;
     printf( "%lf\n", accum );
-    printf("%f\n", C[5]);
+    fprintf(stderr, "%f\n", C[5]);
     return 0;
 }
