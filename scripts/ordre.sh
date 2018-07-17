@@ -36,13 +36,13 @@ do
   echo "i : $i \n"
   echo "GCC \n"
   #GCC
-  ./../bin/gcc_ordre_O3.out >> ../output/ordre/gcc/O3/resultat.txt
+  ./../bin/gcc_ordre_O3.out >> ../output/ordre/gcc/O3/resultat.txt 2> /dev/null
 
   echo "INTEL \n"
   #INTEL
-  ./../bin/intel_ordre_O3.out >> ../output/ordre/intel/O3/resultat.txt
+  ./../bin/intel_ordre_O3.out >> ../output/ordre/intel/O3/resultat.txt 2> /dev/null
 
   echo "CLANG \n"
   #CLANG
-  ./../bin/clang_ordre_O3.out >> ../output/ordre/clang/O3/resultat.txt
+  ./../bin/clang_ordre_O3.out >> ../output/ordre/clang/O3/resultat.txt 2> /dev/null
 done
