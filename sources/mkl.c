@@ -18,8 +18,8 @@ int main()
     struct timespec start, stop;
     double accum;
     srand(time(NULL));
-  for(int i = 0; i < 4096; i++){));
-    for(int j = 0; j < 4096; i++){
+  for(int i = 0; i < 4096; i++){
+    for(int j = 0; j < 4096; j++){
       A[i][j] = rand() % 200;
       B[i][j] = rand() % 200;
       C[i][j] = 0;
