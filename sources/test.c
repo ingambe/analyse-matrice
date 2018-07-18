@@ -7,6 +7,11 @@
 #define M 4
 #define P 4
 
+// 4096 * 4096 = 16777216
+float A[4096][4096];
+float B[4096][4096];
+float C[4096][4096];
+
 void multiplicationMatrice(float A[], float B[], float C[]){
     for (int i=0; i< (N / 2) * 2; i+=2){
         for (int j=0; j< M; j++){
@@ -32,17 +37,15 @@ void multiplicationMatrice(float A[], float B[], float C[]){
 int main() {
     struct timespec start, stop;
     double accum;
-    clock_gettime( CLOCK_REALTIME, &start);
     srand(time(NULL));
-    // 4096 * 4096 = 16777216
-    float A[16];
-    float B[16];
-    float C[16];
-    for(int i = 0; i < 16; i++){
-        A[i] = i;
-        B[i] = i;
-        C[i] = 0;
+    for(int i = 0; i < 4096; i++){));
+      for(int j = 0; j < 4096; i++){
+        A[i][j] = rand() % 200;
+        B[i][j] = rand() % 200;
+        C[i][j] = 0;
+      }
     }
+    clock_gettime( CLOCK_REALTIME, &start);
     multiplicationMatrice(A, B, C);
     clock_gettime( CLOCK_REALTIME, &stop);
     accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec );

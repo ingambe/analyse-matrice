@@ -8,20 +8,25 @@
 #define P 4096
 #define BILLION 1E9
 
-void multiplicationMatrice(float A[], float B[], float C[]){
+// 4096 * 4096 = 16777216
+float A[4096][4096];
+float B[4096][4096];
+float C[4096][4096];
+
+void multiplicationMatrice(){
     for (int i=0; i< N; i++){
         for (int j=0; j< M; j++){
             for (int k=0; k< (P / 7) * 7; k+=7){
-                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + k] * B[(k * P) + j];
-                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + (k + 1)] * B[((k + 1) * P) + j];
-                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + (k + 2)] * B[((k + 2) * P) + j];
-                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + (k + 3)] * B[((k + 3) * P) + j];
-                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + (k + 4)] * B[((k + 4) * P) + j];
-                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + (k + 5)] * B[((k + 5) * P) + j];
-                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + (k + 6)] * B[((k + 6) * P) + j];
+                C[i][j] = C[i][j] + A[i][k] * B[k][j];
+                C[i][j] = C[i][j] + A[i][k + 1] * B[k + 1][j];
+                C[i][j] = C[i][j] + A[i][k + 2] * B[k + 2][j];
+                C[i][j] = C[i][j] + A[i][k + 3] * B[k + 3][j];
+                C[i][j] = C[i][j] + A[i][k + 4] * B[k + 4][j];
+                C[i][j] = C[i][j] + A[i][k + 5] * B[k + 5][j];
+                C[i][j] = C[i][j] + A[i][k + 6] * B[k + 6][j];
             }
             for (int k=(P / 7) * 7; k < P; k++){
-                C[(i * N) + j] = C[(i * N) + j] + A[(i * N) + k] * B[(k * P) + j];
+                C[i][j] = C[i][j] + A[i][k] * B[k][j];
             }
         }
     }
@@ -31,21 +36,19 @@ void multiplicationMatrice(float A[], float B[], float C[]){
 int main() {
     struct timespec start, stop;
     double accum;
-    clock_gettime( CLOCK_REALTIME, &start);
     srand(time(NULL));
-    // 4096 * 4096 = 16777216
-    float A[16777216];
-    float B[16777216];
-    float C[16777216];
-    for(int i = 0; i < 16777216; i++){
-        A[i] = rand();
-        B[i] = rand();
-        C[i] = 0;
+    for(int i = 0; i < 4096; i++){));
+      for(int j = 0; j < 4096; i++){
+        A[i][j] = rand() % 200;
+        B[i][j] = rand() % 200;
+        C[i][j] = 0;
+      }
     }
-    multiplicationMatrice(A, B, C);
+    clock_gettime( CLOCK_REALTIME, &start);
+    multiplicationMatrice();
     clock_gettime( CLOCK_REALTIME, &stop);
     accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec ) / BILLION;
     printf( "%lf\n", accum );
-    printf("%f\n", C[5]);
+    printf("%f\n", C[5][rand() % 4090]);
     return 0;
 }
