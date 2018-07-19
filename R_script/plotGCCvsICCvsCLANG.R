@@ -17,7 +17,7 @@ generalDetails<-c(expression(
   italic("Compiler = ICC 18.0.2"),
   italic("Compiler = CLANG 6.0.0-1"),
   italic("Option = O3"),
-  italic("Executions = 100")))
+  italic("Executions = 10")))
 
 #cicada
 generalHardware<-("Intel Xeon W3520, 2.66GHz GHz, 4 cores, 4 GB RAM")
