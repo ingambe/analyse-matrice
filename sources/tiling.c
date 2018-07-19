@@ -7,6 +7,7 @@
 #define M 4096
 #define P 4096
 #define BILLION 1E9
+#define B 836
 
 // 4096 * 4096 = 16777216
 float A[4096][4096];
@@ -15,18 +16,18 @@ float C[4096][4096];
 
 void multiplicationMatrice(){
   for (i0 = 0; i0 < N; i0 += B){
-for (j0 = 0; j0 < M; j0 += B){
-for (k0 = 0; k0 < P; k0 += B){
-for (i = i0; i < min(i0 + B, N); i++){
-for (j = j0; j < min(j0 + B, M); j++){
-for (k = k0; k < min(k0 + B, P); k++){
-C[i][j] += A[i][k] * B[k][j];
-}
-}
-}
-}
-}
-}
+    for (j0 = 0; j0 < M; j0 += B){
+      for (k0 = 0; k0 < P; k0 += B){
+        for (i = i0; i < min(i0 + B, N); i++){
+          for (j = j0; j < min(j0 + B, M); j++){
+            for (k = k0; k < min(k0 + B, P); k++){
+              C[i][j] += A[i][k] * B[k][j];
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 

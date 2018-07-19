@@ -64,4 +64,13 @@ gcc ../sources/ordre_3.c -O3 -o ../bin/gcc_ordre3_O3.out
 icpc ../sources/ordre_3.c -O3 -o ../bin/intel_ordre3_O3.out
 
 clang ../sources/ordre_3.c -O3 -o ../bin/clang_ordre3_O3.out
+
+# TILLING
+echo "tilling"
+gcc ../sources/tiling.c -O3 -o ../bin/gcc_tilling.out
+
+icpc ../sources/tiling.c -O3 -o ../bin/intel_tilling.out
+
+clang ../sources/tiling.c -O3 -o ../bin/clang_tilling.out
+
 echo "fin de compilation"
