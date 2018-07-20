@@ -9,21 +9,19 @@
 #define BILLION 1E9
 
 // 4096 * 4096 = 16777216
-float A[4096][4096];
-float B[4096][4096];
-float C[4096][4096];
+double A[16777216];
+double B[16777216];
+double C[16777216];
 
 int main()
 {
     struct timespec start, stop;
     double accum;
     srand(time(NULL));
-  for(int i = 0; i < 4096; i++){
-    for(int j = 0; j < 4096; j++){
-      A[i][j] = rand() % 200;
-      B[i][j] = rand() % 200;
-      C[i][j] = 0;
-    }
+  for(int i = 0; i < 16777216; i++){
+      A[i] = rand() % 200;
+      B[i] = rand() % 200;
+      C[i] = 0;
   }
     int m, n, k, i, j;
     double alpha, beta;
@@ -38,6 +36,6 @@ int main()
                 clock_gettime( CLOCK_REALTIME, &stop);
                 accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec ) / BILLION;
                 printf( "%lf\n", accum );
-                printf("%f\n", C[5][rand() % 4090]);
+                printf("%f\n", C[rand() % 16777215]);
     return 0;
 }

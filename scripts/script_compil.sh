@@ -77,5 +77,11 @@ clang ../sources/tiling.c -O3 -o ../bin/clang_tilling.out
 echo "mkl"
 icpc ../sources/mkl.c -O3 -o ../bin/intel_mkl.out  -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_ilp64.a ${MKLROOT}/lib/intel64/libmkl_sequential.a ${MKLROOT}/lib/intel64/libmkl_core.a -Wl,--end-group -lpthread -lm -ldl
 
+echo "parallel 1"
+gcc ../sources/parallel_1.c -O3 -o ../bin/gcc_parallel1_O3.out -fopenmp
+
+icpc ../sources/parallel_1.c -O3 -o ../bin/intel_parallel1_O3.out -fopenmp
+
+clang ../sources/parallel_1.c -O3 -o ../bin/clang_parallel1_O3.out -fopenmp
 
 echo "fin de compilation"
