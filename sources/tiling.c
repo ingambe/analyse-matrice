@@ -7,7 +7,7 @@
 #define M 4096
 #define P 4096
 #define BILLION 1E9
-#define B 836
+#define BN 836
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
 
 // 4096 * 4096 = 16777216
@@ -16,12 +16,12 @@ float B[4096][4096];
 float C[4096][4096];
 
 void multiplicationMatrice(){
-  for (int i0 = 0; i0 < N; i0 += B){
-    for (int j0 = 0; j0 < M; j0 += B){
-      for (int k0 = 0; k0 < P; k0 += B){
-        for (int i = i0; i < MIN(i0 + B, N); i++){
-          for (int j = j0; j < MIN(j0 + B, M); j++){
-            for (int k = k0; k < MIN(k0 + B, P); k++){
+  for (int i0 = 0; i0 < N; i0 += BN){
+    for (int j0 = 0; j0 < M; j0 += BN){
+      for (int k0 = 0; k0 < P; k0 += BN){
+        for (int i = i0; i < MIN(i0 + BN, N); i++){
+          for (int j = j0; j < MIN(j0 + BN, M); j++){
+            for (int k = k0; k < MIN(k0 + BN, P); k++){
               C[i][j] += A[i][k] * B[k][j];
             }
           }
