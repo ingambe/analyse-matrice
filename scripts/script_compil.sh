@@ -73,4 +73,9 @@ icpc ../sources/tiling.c -O3 -o ../bin/intel_tilling.out
 
 clang ../sources/tiling.c -O3 -o ../bin/clang_tilling.out
 
+#MKL
+echo "mkl"
+icpc ../sources/mkl.c -O3 -o ../bin/intel_mkl.out  -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_ilp64.a ${MKLROOT}/lib/intel64/libmkl_sequential.a ${MKLROOT}/lib/intel64/libmkl_core.a -Wl,--end-group -lpthread -lm -ldl
+
+
 echo "fin de compilation"
