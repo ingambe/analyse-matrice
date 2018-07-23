@@ -26,16 +26,15 @@ int main()
     int m, n, k, i, j;
     double alpha, beta;
 
-    m = 2000, k = 200, n = 1000;
+    m = 4096, k = 4096, n = 4096;
     alpha = 1.0; beta = 0.0;
 
     clock_gettime( CLOCK_REALTIME, &start);
     cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,
                 m, n, k, alpha, A, k, B, n, beta, C, n);
-
-                clock_gettime( CLOCK_REALTIME, &stop);
-                accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec ) / BILLION;
-                printf( "%lf\n", accum );
-                printf("%f\n", C[rand() % 16777215]);
+    clock_gettime( CLOCK_REALTIME, &stop);
+    accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec ) / BILLION;
+    printf( "%lf\n", accum );
+    printf("%f\n", C[rand() % 16777215]);
     return 0;
 }

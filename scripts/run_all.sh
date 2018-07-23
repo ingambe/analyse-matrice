@@ -9,4 +9,4 @@
 #./ordre_2.sh
 #./ordre_3.sh
 ./mkl.sh
-./parallel_1.sh
+#./parallel_1.sh
