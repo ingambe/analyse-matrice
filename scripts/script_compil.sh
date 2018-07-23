@@ -81,6 +81,7 @@ echo "parallel 1"
 gcc ../sources/parallel_1.c -O3 -o ../bin/gcc_parallel1_O3.out -fopenmp
 
 icpc ../sources/parallel_1.c -O3 -o ../bin/intel_parallel1_O3.out -fopenmp
+icpc ../sources/parallel_1.c -O3 -g -o ../bin/intel_parallel1_Og.out -fopenmp
 
 clang ../sources/parallel_1.c -O3 -o ../bin/clang_parallel1_O3.out -fopenmp
 
