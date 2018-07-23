@@ -31,7 +31,7 @@ echo "fin de creation fichier de sortie \n"
 
 echo "debug generation resultat \n"
 
-for i in  `seq 1 10`
+for i in  `seq 1 20`
 do
   echo "i : $i \n"
   echo "GCC \n"
