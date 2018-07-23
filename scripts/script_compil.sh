@@ -98,8 +98,8 @@ clang ../sources/parallel_1.c -O3 -o ../bin/clang_parallel1_O3_avx.out -fopenmp 
 echo "sequentiel axv2"
 gcc ../sources/original.c -O3 -o ../bin/gcc_avx.out -march=native
 
-icpc ../sources/original.c -O3 -o ../bin/intel_avx.out -xcore-avx2
+icpc ../sources/original.c -O3 -o ../bin/intel_avx.out -march=native
 
-clang ../sources/original.c -O3 -o ../bin/clang_avx.out -march=native -xcore-avx2
+clang ../sources/original.c -O3 -o ../bin/clang_avx.out -march=native
 
 echo "fin de compilation"
