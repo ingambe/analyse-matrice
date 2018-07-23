@@ -8,5 +8,7 @@
 #./ordre.sh
 #./ordre_2.sh
 #./ordre_3.sh
-./mkl.sh
+#./mkl.sh
 #./parallel_1.sh
+./original_avx.sh
+./parallel_1_avx.sh
