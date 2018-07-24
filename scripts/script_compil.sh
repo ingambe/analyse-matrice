@@ -90,10 +90,10 @@ echo "parallel AXV2"
 
 gcc ../sources/parallel_1.c -O3 -o ../bin/gcc_parallel1_O3_avx.out -fopenmp -march=native
 
-icpc ../sources/parallel_1.c -O3 -o ../bin/intel_parallel1_O3_avx.out -fopenmp -xcore-avx2
-icpc ../sources/parallel_1.c -O3 -g -o ../bin/intel_parallel1_Og_avx.out -fopenmp -xcore-avx2
+icpc ../sources/parallel_1.c -O3 -o ../bin/intel_parallel1_O3_avx.out -fopenmp -march=native
+icpc ../sources/parallel_1.c -O3 -g -o ../bin/intel_parallel1_Og_avx.out -fopenmp -march=native
 
-clang ../sources/parallel_1.c -O3 -o ../bin/clang_parallel1_O3_avx.out -fopenmp -xcore-avx2
+clang ../sources/parallel_1.c -O3 -o ../bin/clang_parallel1_O3_avx.out -fopenmp -march=native
 
 echo "sequentiel axv2"
 gcc ../sources/original.c -O3 -o ../bin/gcc_avx.out -march=native
