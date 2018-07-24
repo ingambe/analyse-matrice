@@ -1,42 +1,33 @@
+library(wvioplot)
 library(wesanderson)
 
 setwd("/home/ingambe/Bureau/analyse-matrice/output")
+palette <- wes_palette(n=3,name="Zissou1")
 
-xLabels<-c("original", "deroulage 1", "deroulage 2", "deroulage 3", "ordre 1", "ordre 2", "ordre 3", "tilling")
-#xLabels<-c("original", "deroulage 1", "deroulage 2", "deroulage 3", "ordre 1")
+xLabels<-c("Sequential", "Sequential AVX2", "Parallel", "Parallel AVX2", "MKL")
 
-intel_0<-read.table(file="intel/O3/resultat.txt",sep="\n", header=FALSE)
-intel_1<-read.table(file="deroulage/intel/O3/resultat.txt",sep="\n", header=FALSE)
-intel_2<-read.table(file="deroulage2/intel/O3/resultat.txt",sep="\n", header=FALSE)
-intel_3<-read.table(file="deroulage3/intel/O3/resultat.txt",sep="\n", header=FALSE)
-intel_4<-read.table(file="ordre/intel/O3/resultat.txt",sep="\n", header=FALSE)
-intel_5<-read.table(file="ordre2/intel/O3/resultat.txt",sep="\n", header=FALSE)
-intel_6<-read.table(file="ordre3/intel/O3/resultat.txt",sep="\n", header=FALSE)
-intel_7<-read.table(file="tilling/intel/O3/resultat.txt",sep="\n", header=FALSE)
+seq<-read.table(file = "deroulage2/intel/O3/resultat.txt",sep="\n", header=FALSE)
+seqavx<-read.table(file = "intel/avx/resultat.txt",sep="\n", header=FALSE)
+par1<-read.table(file = "parallel1/intel/O3/resultat.txt",sep="\n", header=FALSE)
+par2<-read.table(file = "parallel1_avx/intel/O3/resultat.txt",sep="\n", header=FALSE)
+mkl<-read.table(file = "mkl/resultat.txt",sep="\n", header=FALSE)
 
 generalDetails<-c(expression(
-  
   italic("Linux kernel = 4.13.0-38"), 
-  italic("Compiler = GCC 5.4.0"),
   italic("Compiler = ICC 18.0.2"),
-  italic("Compiler = CLANG 6.0.0-1"),
-  italic("Option = O3"),
+  italic("File = j1.txt"),
+  italic("Double déroulage boucle exterieur i"),
   italic("Executions = 10")))
 
 #cicada
 generalHardware<-("Intel Xeon W3520, 2.66GHz GHz, 4 cores, 4 GB RAM")
 
-palette <- wes_palette(n=3,name="Zissou1")
+wvioplot(seq$V1, seqavx$V1,par1$V1,par2$V1, mkl$V1, clip=TRUE, adjust = 1, col=palette[1],names=FALSE)
 
-y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1), median(intel_5$V1), median(intel_6$V1), median(intel_6$V1))
-#y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1))
-barplot(y, names.arg=xLabels)
+axis(1,cex.axis=0.6,at=1:5, labels=xLabels)
 
+legend("topright", generalDetails, bty = "n", cex=0.8)
 
-legend("topright", generalDetails, bty = "n", cex=0.6)
-legend("bottomleft", inset=.03, c("GCC", "INTEL","CLANG"), fill=wes_palette(n=3,name="Zissou1"), horiz=TRUE, cex=0.6)
-mtext(generalHardware, side=3, cex=1.0)
+mtext(generalHardware, side=3, cex=1.5)
 
-title(ylab = "Temps (secondes)", xlab="Options de compilation", line = NA)
-
-png(filename="../plot/gcc_icc_clang.png")
+title(ylab = "Time (seconds)", xlab="Version Used", line = NA)

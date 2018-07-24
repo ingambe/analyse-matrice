@@ -35,6 +35,6 @@ int main()
     clock_gettime( CLOCK_REALTIME, &stop);
     accum = ( stop.tv_sec - start.tv_sec ) + ( stop.tv_nsec - start.tv_nsec ) / BILLION;
     printf( "%lf\n", accum );
-    printf("%f\n", C[rand() % 16777215]);
+    fprintf(stderr, "%f\n", C[rand() % 16777215]);
     return 0;
 }

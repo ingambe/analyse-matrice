@@ -17,9 +17,7 @@ intel_7<-read.table(file="tilling/intel/O3/resultat.txt",sep="\n", header=FALSE)
 generalDetails<-c(expression(
   
   italic("Linux kernel = 4.13.0-38"), 
-  italic("Compiler = GCC 5.4.0"),
   italic("Compiler = ICC 18.0.2"),
-  italic("Compiler = CLANG 6.0.0-1"),
   italic("Option = O3"),
   italic("Executions = 10")))
 
@@ -28,15 +26,14 @@ generalHardware<-("Intel Xeon W3520, 2.66GHz GHz, 4 cores, 4 GB RAM")
 
 palette <- wes_palette(n=3,name="Zissou1")
 
-y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1), median(intel_5$V1), median(intel_6$V1), median(intel_6$V1))
+y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1), median(intel_5$V1), median(intel_6$V1), median(intel_7$V1))
 #y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1))
 barplot(y, names.arg=xLabels)
 
 
 legend("topright", generalDetails, bty = "n", cex=0.6)
-legend("bottomleft", inset=.03, c("GCC", "INTEL","CLANG"), fill=wes_palette(n=3,name="Zissou1"), horiz=TRUE, cex=0.6)
 mtext(generalHardware, side=3, cex=1.0)
 
-title(ylab = "Temps (secondes)", xlab="Options de compilation", line = NA)
+title(ylab = "Temps (secondes)", xlab="Modifications", line = NA)
 
 png(filename="../plot/gcc_icc_clang.png")
