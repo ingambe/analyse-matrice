@@ -109,4 +109,20 @@ icpc ../sources/tiling_2.c -O3 -o ../bin/intel_tiling_2.out -march=native
 
 clang ../sources/tiling_2.c -O3 -o ../bin/clang_tiling_2.out -march=native
 
+echo "parallel v2"
+gcc ../sources/parallel_2.c -O3 -o ../bin/gcc_parallel2_O3_avx.out -fopenmp -march=native
+
+icpc ../sources/parallel_2.c -O3 -o ../bin/intel_parallel2_O3_avx.out -fopenmp -march=native
+icpc ../sources/parallel_2.c -O3 -g -o ../bin/intel_parallel2_Og_avx.out -fopenmp -march=native
+
+clang ../sources/parallel_2.c -O3 -o ../bin/clang_parallel2_O3_avx.out -fopenmp -march=native
+
+echo "parallel v2 vec"
+gcc ../sources/parallel_2.c -O3 -o ../bin/gcc_parallel2_O3_avx_v.out -fopenmp -march=native -ftree-vectorize
+
+icpc ../sources/parallel_2.c -O3 -o ../bin/intel_parallel2_O3_avx_v.out -fopenmp -march=native -ftree-vectorize
+icpc ../sources/parallel_2.c -O3 -g -o ../bin/intel_parallel2_Og_avx_v.out -fopenmp -march=native -ftree-vectorize
+
+clang ../sources/parallel_2.c -O3 -o ../bin/clang_parallel2_O3_avx_v.out -fopenmp -march=native -ftree-vectorize
+
 echo "fin de compilation"
