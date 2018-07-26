@@ -13,4 +13,5 @@
 #./parallel_1.sh
 #./original_avx.sh
 #./parallel_1_avx.sh
-./tilling_2.sh
+#./tilling_2.sh
+./affinity.sh

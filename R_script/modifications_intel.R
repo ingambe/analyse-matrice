@@ -2,7 +2,7 @@ library(wesanderson)
 
 setwd("/home/ingambe/Bureau/analyse-matrice/output")
 
-xLabels<-c("original", "deroulage 1", "deroulage 2", "deroulage 3", "ordre 1", "ordre 2", "ordre 3", "tilling", "tilling 2")
+xLabels<-c("original", "deroulage 1", "deroulage 2", "deroulage 3", "ordre 1", "ordre 2", "ordre 3", "tilling 2")
 #xLabels<-c("original", "deroulage 1", "deroulage 2", "deroulage 3", "ordre 1")
 
 intel_0<-read.table(file="intel/O3/resultat.txt",sep="\n", header=FALSE)
@@ -27,8 +27,10 @@ generalHardware<-("Intel Xeon W3520, 2.66GHz GHz, 4 cores, 4 GB RAM")
 
 palette <- wes_palette(n=3,name="Zissou1")
 
-y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1), median(intel_5$V1), median(intel_6$V1), median(intel_7$V1), median(intel_8$V1))
+#y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1), median(intel_5$V1), median(intel_6$V1), median(intel_7$V1), median(intel_8$V1))
 #y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1))
+y <- c(median(intel_0$V1), median(intel_1$V1), median(intel_2$V1), median(intel_3$V1), median(intel_4$V1), median(intel_5$V1), median(intel_6$V1), median(intel_8$V1))
+
 barplot(y, names.arg=xLabels)
 
 
