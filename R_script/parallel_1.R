@@ -4,13 +4,15 @@ library(wesanderson)
 setwd("/home/ingambe/Bureau/analyse-matrice/output")
 palette <- wes_palette(n=3,name="Zissou1")
 
-xLabels<-c("Sequential", "Sequential AVX2", "Parallel", "Parallel AVX2", "MKL")
+xLabels<-c("Sequential", "Sequential AVX2", "Parallel", "Parallel AVX2", "MKL", "compact", "scatter")
 
 seq<-read.table(file = "deroulage2/intel/O3/resultat.txt",sep="\n", header=FALSE)
 seqavx<-read.table(file = "intel/avx/resultat.txt",sep="\n", header=FALSE)
 par1<-read.table(file = "parallel1/intel/O3/resultat.txt",sep="\n", header=FALSE)
 par2<-read.table(file = "parallel1_avx/intel/O3/resultat.txt",sep="\n", header=FALSE)
 mkl<-read.table(file = "mkl/resultat.txt",sep="\n", header=FALSE)
+compact<-
+scatter<-
 
 generalDetails<-c(expression(
   italic("Linux kernel = 4.13.0-38"), 
