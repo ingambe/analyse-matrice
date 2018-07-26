@@ -27,7 +27,7 @@ export KMP_AFFINITY=scatter
 for i in  `seq 1 20`
 do
   echo "i : $i"
-  cat ../input/j1.txt | ./../bin/intel_parallel1_O3_avx.out >> ../output/parallel1/affinity/intel/scatter.txt
+  ./../bin/intel_parallel1_O3_avx.out >> ../output/parallel1/affinity/intel/scatter.txt
 done
 
 
@@ -35,6 +35,6 @@ echo "Compact"
 export KMP_AFFINITY=compact
 for i in  `seq 1 20`
 do
-  echo "i : $i \n"
-  cat ../input/j1.txt | ./../bin/intel_parallel1_O3_avx.out >> ../output/parallel1/affinity/intel/compact.txt
+  echo "i : $i"
+  ./../bin/intel_parallel1_O3_avx.out >> ../output/parallel1/affinity/intel/compact.txt
 done
