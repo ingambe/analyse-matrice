@@ -102,4 +102,11 @@ icpc ../sources/original.c -O3 -o ../bin/intel_avx.out -march=native
 
 clang ../sources/original.c -O3 -o ../bin/clang_avx.out -march=native
 
+echo "tilling v2"
+gcc ../sources/tiling_2.c -O3 -o ../bin/gcc_tiling_2.out -march=native
+
+icpc ../sources/tiling_2.c -O3 -o ../bin/intel_tiling_2.out -march=native
+
+clang ../sources/tiling_2.c -O3 -o ../bin/clang_tiling_2.out -march=native
+
 echo "fin de compilation"
