@@ -10,11 +10,10 @@
 #./ordre_3.sh
 #./tilling.sh
 #./mkl.sh
-#./parallel_1.sh
+./parallel_1.sh
 #./original_avx.sh
-#./parallel_1_avx.sh
+./parallel_1_avx.sh
 #./tilling_2.sh
-#./affinity.sh
-./parallel_2.sh
 ./parallel_2_avx.sh
 ./parallel_2_avx_vec.sh
+./parallel_3_avx.sh

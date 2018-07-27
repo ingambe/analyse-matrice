@@ -15,7 +15,7 @@ float B[4096][4096];
 float C[4096][4096];
 
 void multiplicationMatrice(){
-    #pragma omp parallel
+    #pragma omp parallel for
     for (int i=0; i< (N / 3) * 2; i+=3){
         for (int j=0; j< M; j++){
             for (int k=0; k< P; k++){

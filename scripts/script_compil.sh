@@ -125,4 +125,13 @@ icpc ../sources/parallel_2.c -O3 -g -o ../bin/intel_parallel2_Og_avx_v.out -fope
 
 clang ../sources/parallel_2.c -O3 -o ../bin/clang_parallel2_O3_avx_v.out -fopenmp -march=native -ftree-vectorize
 
+echo "parallel v3"
+gcc ../sources/parallel_3.c -O3 -o ../bin/gcc_parallel3_O3_avx_v.out -fopenmp -march=native -ftree-vectorize
+
+icpc ../sources/parallel_3.c -O3 -o ../bin/intel_parallel3_O3_avx_v.out -fopenmp -march=native 
+icpc ../sources/parallel_3.c -O3 -g -o ../bin/intel_parallel3_Og_avx_v.out -fopenmp -march=native
+
+clang ../sources/parallel_3.c -O3 -o ../bin/clang_parallel3_O3_avx_v.out -fopenmp -march=native -ftree-vectorize
+
+
 echo "fin de compilation"

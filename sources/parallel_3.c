@@ -16,22 +16,16 @@ float C[4096][4096];
 
 void multiplicationMatrice(){
     #pragma omp parallel for
-    for (int i=0; i< (N / 3) * 2; i+=3){
-        for (int k=0; k< P; k++){
-            for (int j=0; j< M; j++){
+    for (int i=0; i< (N / omp_get_num_threads()) * omp_get_num_threads(); i++){
+        for (int j=0; j< M; j++){
+            for (int k=0; k< P; k++){
                 C[i][j] = C[i][j] + A[i][k] * B[k][j];
-            }
-            for (int j=0; j< M; j++){
-                C[i + 1][j] = C[i + 1][j] + A[i + 1][k] * B[k][j];
-            }
-            for (int j=0; j< M; j++){
-                C[i + 2][j] = C[i + 2][j] + A[i + 2][k] * B[k][j];
             }
         }
     }
-    for (int i=(N / 3) * 3; i< N; i++){
-        for (int k=0; k< P; k++){
-            for (int j=0; j< M; j++){
+    for (int i=(N / omp_get_num_threads()) * omp_get_num_threads(); i< N; i++){
+        for (int j=0; j< M; j++){
+            for (int k=0; k< P; k++){
                 C[i][j] = C[i][j] + A[i][k] * B[k][j];
             }
         }
