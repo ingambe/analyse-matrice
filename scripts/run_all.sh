@@ -18,3 +18,4 @@
 ./parallel_2_avx_vec.sh
 ./parallel_3_avx.sh
 ./affinity.sh
+./affinity_3.sh
