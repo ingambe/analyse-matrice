@@ -16,6 +16,7 @@
 #./tilling_2.sh
 #./parallel_2_avx.sh
 #./parallel_2_avx_vec.sh
-./parallel_3_avx.sh
-./affinity.sh
-./affinity_3.sh
+#./parallel_3_avx.sh
+#./affinity.sh
+#./affinity_3.sh
+./affinity_4.sh
