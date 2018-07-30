@@ -19,4 +19,4 @@
 #./parallel_3_avx.sh
 #./affinity.sh
 #./affinity_3.sh
-./affinity_4.sh
+./parallel_4_avx.sh
