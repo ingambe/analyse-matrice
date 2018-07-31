@@ -36,13 +36,13 @@ do
   echo "i : $i \n"
   echo "GCC \n"
   #GCC
-  ./../bin/gcc_parallel4_O3_avx.out >> ../output/parallel4_avx/gcc/O3/resultat.txt
+  ./../bin/gcc_parallel4_O3.out >> ../output/parallel4_avx/gcc/O3/resultat.txt
 
   echo "INTEL \n"
   #INTEL
-  ./../bin/intel_parallel4_O3_avx.out >> ../output/parallel4_avx/intel/O3/resultat.txt
+  ./../bin/intel_parallel4_O3.out >> ../output/parallel4_avx/intel/O3/resultat.txt
 
   echo "CLANG \n"
   #CLANG
-  ./../bin/clang_parallel4_O3_avx.out >> ../output/parallel4_avx/clang/O3/resultat.txt
+  ./../bin/clang_parallel4_O3.out >> ../output/parallel4_avx/clang/O3/resultat.txt
 done
