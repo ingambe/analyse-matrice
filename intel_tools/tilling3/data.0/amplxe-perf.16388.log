@@ -1,0 +1,4 @@
+
+16389:perf-sync:ready:TSC=4354643409501152
+[ perf record: Woken up 26 times to write data ]
+[ perf record: Captured and wrote 6.621 MB /root/analyse-matrice/intel_tools/tilling3/data.0/system-wide.perf ]
