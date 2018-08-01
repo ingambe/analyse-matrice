@@ -1,0 +1,4 @@
+
+13498:perf-sync:ready:TSC=4351693099440300
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.111 MB /root/analyse-matrice/intel_tools/tilling1/data.0/temp.dryrun.perf ]

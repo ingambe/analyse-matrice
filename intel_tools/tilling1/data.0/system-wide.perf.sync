@@ -1,0 +1,19 @@
+VTune Linux Perf Time Sync: 1
+VTune Start TSC 4351693980830140:4351693980996532:4351693981100980:4351693981251440:4351693981399510:4351693981547565:4351693981703492:4351693981853392
+ amplxe-perf-syn 13507 1631985.590374: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13507 1631985.590432: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13507 1631985.590467: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13507 1631985.590523: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13507 1631985.590579: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13507 1631985.590634: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13507 1631985.590693: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13507 1631985.590749: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+VTune End TSC 4353643165390320:4353643165556486:4353643165708832:4353643165859132:4353643166009040:4353643166158986:4353643166308900:4353643166434712
+ amplxe-perf-syn 13518 1632716.596171: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13518 1632716.596226: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13518 1632716.596283: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13518 1632716.596339: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13518 1632716.596395: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13518 1632716.596451: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13518 1632716.596508: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])
+ amplxe-perf-syn 13518 1632716.596555: context-switches:  ffffffff8740dbc2 schedule ([kernel.kallsyms])

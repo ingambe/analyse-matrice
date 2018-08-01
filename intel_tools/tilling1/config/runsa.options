@@ -1,0 +1,16 @@
+-r
+/root/analyse-matrice/intel_tools/tilling1
+--itt-config=frame
+--stack-stitching
+--collector=perf
+--no-stack
+--data-limit-mb=500
+--disk-space-limit=0
+--mrte-type=java
+--event-config=CPU_CLK_UNHALTED.THREAD:sa=2670000,CPU_CLK_UNHALTED.REF_P:sa=133000,INST_RETIRED.ANY:sa=2670000
+--platform-type=59
+--uncore-sampling-interval=10
+--mrte-mode=auto
+--stack-size=1024
+--
+bin/intel_tilling.out
