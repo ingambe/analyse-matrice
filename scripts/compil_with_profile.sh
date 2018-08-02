@@ -7,7 +7,7 @@ icpc ../sources/parallel_2.c -O3 -prof-dir=../bin -prof-gen -o ../bin/intel_para
 
 echo "compilation avec utilisation profile"
 
-icpc ../sources/parallel_2.c -std=c++11 -prof-dir=../bin -prof-use -O3 -o ../bin/intel_parallel2_O3_avx_use.out
+icpc ../sources/parallel_2.c -std=c++11 -prof-dir=../bin -prof-use -O3 -o ../bin/intel_parallel2_O3_avx_use.out -fopenmp -march=native
 
 echo "debut creation fichiers de sortie\n"
 
