@@ -1,6 +1,6 @@
 # mark_description "Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.222 Build 20180410";
 # mark_description "";
-# mark_description "-O3 -o ../bin/intel_O3.out -S";
+# mark_description "-O3 -S";
 	.file "original.c"
 	.text
 ..TXTST0:
