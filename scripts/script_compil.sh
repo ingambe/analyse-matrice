@@ -147,4 +147,16 @@ echo "ipo"
 icpc ../sources/parallel_2.c -O3 -ipo -o ../bin/intel_parallel_ipo.out -fopenmp -march=native
 
 
+echo "tilling v3"
+gcc ../sources/tiling_L2.c -O3 -o ../bin/gcc_tiling_L2.out -march=native
+
+icpc ../sources/tiling_L2.c -O3 -o ../bin/intel_tiling_L2.out -march=native
+
+clang ../sources/tiling_L2.c -O3 -o ../bin/clang_tiling_L2.out -march=native
+
+gcc ../sources/tiling_L1.c -O3 -o ../bin/gcc_tiling_L1.out -march=native
+
+icpc ../sources/tiling_L1.c -O3 -o ../bin/intel_tiling_L1.out -march=native
+
+clang ../sources/tiling_L1.c -O3 -o ../bin/clang_tiling_L1.out -march=native
 echo "fin de compilation"
