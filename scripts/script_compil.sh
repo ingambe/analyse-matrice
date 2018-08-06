@@ -142,5 +142,9 @@ icpc ../sources/parallel_4.c -O3 -g -o ../bin/intel_parallel4_Og.out -fopenmp -m
 
 clang ../sources/parallel_4.c -O3 -o ../bin/clang_parallel4_O3.out -fopenmp -march=native
 
+echo "ipo"
+
+icpc ../sources/parallel_2.c -O3 -ipo -o ../bin/intel_parallel_ipo.out -fopenmp -march=native
+
 
 echo "fin de compilation"
