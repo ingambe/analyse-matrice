@@ -22,6 +22,6 @@
 #./parallel_4_avx.sh
 #./tilling_L1.sh
 #./tilling_L2.sh
-#./prefetch1.sh
+./prefetch1.sh
 ./prefetch2.sh
 #./prefetch3.sh
