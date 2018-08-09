@@ -159,4 +159,31 @@ gcc ../sources/tiling_L1.c -O3 -o ../bin/gcc_tiling_L1.out -march=native
 icpc ../sources/tiling_L1.c -O3 -o ../bin/intel_tiling_L1.out -march=native
 
 clang ../sources/tiling_L1.c -O3 -o ../bin/clang_tiling_L1.out -march=native
+
+
+
+echo "prefetch v1"
+gcc ../sources/prefetch1.c -O3 -o ../bin/gcc_prefetch1.out -march=native
+
+icpc ../sources/prefetch1.c -O3 -o ../bin/intel_prefetch1.out -march=native
+
+clang ../sources/prefetch1.c -O3 -o ../bin/clang_prefetch1.out -march=native
+
+
+echo "prefetch v2"
+gcc ../sources/prefetch2.c -O3 -o ../bin/gcc_prefetch2.out -march=native
+
+icpc ../sources/prefetch2.c -O3 -o ../bin/intel_prefetch2.out -march=native
+
+clang ../sources/prefetch2.c -O3 -o ../bin/clang_prefetch2.out -march=native
+
+
+echo "prefetch v3"
+gcc ../sources/prefetch3.c -O3 -o ../bin/gcc_prefetch3.out -march=native
+
+icpc ../sources/prefetch3.c -O3 -o ../bin/intel_prefetch3.out -march=native
+
+clang ../sources/prefetch3.c -O3 -o ../bin/clang_prefetch3.out -march=native
+
+
 echo "fin de compilation"
