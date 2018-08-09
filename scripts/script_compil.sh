@@ -186,10 +186,10 @@ icpc ../sources/prefetch3.c -O3 -o ../bin/intel_prefetch3.out -march=native
 clang ../sources/prefetch3.c -O3 -o ../bin/clang_prefetch3.out -march=native
 
 echo "deroulage 2 avx"
-gcc ../sources/deroulage_2.c -O3 -o ../bin/gcc_seqavx.out
+gcc ../sources/deroulage_2.c -O3 -o ../bin/gcc_seqavx.out -march=native
 
-icpc ../sources/deroulage_2.c -O3 -o ../bin/intel_seqavx.out
+icpc ../sources/deroulage_2.c -O3 -o ../bin/intel_seqavx.out -march=native
 
-clang ../sources/deroulage_2.c -O3 -o ../bin/clang_seqavx.out
+clang ../sources/deroulage_2.c -O3 -o ../bin/clang_seqavx.out -march=native
 
 echo "fin de compilation"
